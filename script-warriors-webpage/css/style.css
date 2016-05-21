@@ -1,0 +1,93 @@
+/*Google Fonts*/
+@import url(https://fonts.googleapis.com/css?family=Luckiest+Guy);
+@import url(https://fonts.googleapis.com/css?family=Bitter);
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+
+body {
+  font-family: "Bitter";
+   background-image: url("http://www.3dwallpaperstudio.com/wallpapers/blue_puzzle-2560x1440.jpg");
+  text-align: center;
+}
+
+
+h1 {
+  font-family: "Luckiest Guy";
+}
+
+/*game creator*/
+.author {
+  font-family: "Bitter";
+  font-size: 26px;
+}
+
+#instructiontitle {
+  font-size: 28px;
+  font-weight: bold;
+  font-family: "Rokkitt";
+}
+
+.splashpagewrapper {
+  background: #fff;
+  padding: 10px;
+  margin: auto;
+  width: 700px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 8px solid;
+}
+
+.instructionbox {
+ margin-bottom: 20px;  
+}
+
+h1 {
+  font-size: 50px;
+}
+
+/*The logo image*/
+#gamelogo {
+  display: block;
+  margin: auto;
+  width: 20%;
+}
+
+/*The div around the game instructions*/
+.instructionbox {
+  border: 3px solid #000;
+  margin: 10px;
+  padding: 10px;
+}
+
+/*The "Play" button to start the game*/
+#playbutton {
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 15px;
+  font-family: "Press Start 2P";
+  font-size: 30px;
+  cursor: pointer;
+  text-align: center;
+  border: 3px dotted #000000;
+}
+
+#playbutton:hover {
+  background: red;
+  border: 3px solid #000000;
+}
+
+/* unvisited link */
+a:link {
+    color: #000099;
+}
+
+/* visited link */
+a:visited {
+    color: #000099;
+}
+
+/* mouse-over link */
+a:hover {
+    color: #e60000;
+}

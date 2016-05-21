@@ -1,0 +1,73 @@
+@import "bourbon";
+@import url(https://fonts.googleapis.com/css?family=Luckiest+Guy);
+
+* {
+	-webkit-transition-property: all;
+	-webkit-transition-duration: .2s;
+  -moz-transition-timing-function: cubic-bezier(100,50,21,6);
+	-moz-transition-property: all;
+	-moz-transition-duration: .2s;
+  -moz-transition-timing-function: cubic-bezier(100,50,21,6);
+}
+
+body { border: 10px solid black;
+border-style: double;
+}
+h1 {font-size: 32px; font-family: "Luckiest Guy"; color: #0DF}
+
+h2 {font-size: 28px;
+margin-top: 5px;}
+
+h3 {font-size: 28px;
+margin-top: 5px;}
+
+h4 {font-size: 28px;
+margin-top: 5px;}
+
+h5 {font-size: 28px;
+margin-top: 5px;}
+
+h6 {font-size: 28px;
+margin-top: 5px;}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  width: 166px;
+  height: 45px;
+  font-size: 12px;
+  line-height: 45px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #222;
+  cursor: pointer;
+  overflow: hidden;
+}
+.btn svg {
+  position: absolute;
+  top: 0; left: 0;
+}
+.btn svg rect {
+  fill: rgba(2,2,2,0.1);
+  stroke: #000;
+  stroke-width: 1;
+  stroke-dasharray: 422, 0;
+  
+  @include transition(all 1300ms $ease-out-expo);
+}
+.btn:hover svg rect {
+  stroke-width: 5;
+  stroke-dasharray: 10, 310;
+  stroke-dashoffset: 33;
+}
+
+.btn:hover {
+  color:#D00;
+  font-size:18px;
+  letter-spacing:1px;
+  font-weight:bold;
+}
+
+#play {
+   margin-bottom: 10px;
+}
