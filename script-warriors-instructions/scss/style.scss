@@ -16,19 +16,19 @@ border-style: double;
 h1 {font-size: 32px; font-family: "Luckiest Guy"; color: #0DF}
 
 h2 {font-size: 24px;
-margin-top: 5px;}
+margin-top: 25px;}
 
 h3 {font-size: 24px;
-margin-top: 5px;}
+margin-top: 25px;}
 
 h4 {font-size: 24px;
-margin-top: 5px;}
+margin-top: 25px;}
 
 h5 {font-size: 24px;
-margin-top: 5px;}
+margin-top: 25px;}
 
 h6 {font-size: 24px;
-margin-top: 5px;}
+margin-top: 25px;}
 
 .btn {
   position: relative;
@@ -39,9 +39,10 @@ margin-top: 5px;}
   line-height: 45px;
   text-align: center;
   text-transform: uppercase;
-  color: #222;
+  background-color: rgba(0,0,8,0.3);
   cursor: pointer;
   overflow: hidden;
+  margin-top: 20px;
 }
 .btn svg {
   position: absolute;
