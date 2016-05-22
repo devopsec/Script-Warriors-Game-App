@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Script Warriors Webpage</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
     
     <link rel="stylesheet" href="css/normalize.css">
 
@@ -23,14 +24,23 @@ Created By: DevOpSec-->
 
   <div class="splashpagewrapper">
     <h1>Script Warriors</h1>
-    <p><span class="author">Designed by: <a href="http://codepen.io/devopsec/">DevOpSec</a></span></p>
+    <p><span class="author">Created by: <a href="http://codepen.io/devopsec/">DevOpSec</a></span></p>
     <img id="gamelogo" src="http://vignette3.wikia.nocookie.net/callofduty/images/5/5b/CTF_BOIII.jpg/revision/latest?cb=20150824170136">
-    <button id="playbutton">PLAY</button>
+    <button id="playbutton" href="#" class="btn open-popup" data-id="popup_2" data-animation="scale">PLAY</button>
   
     <div class="instructionbox">
       <span id="instructiontitle">Instructions:</span>
         <p>This is a command-line driven capture the flag web game! Join a team of up to 5 players and capture the opposing teams flag before they capture yours! This game lats 3 rounds, and the team with the highest score at the end of the last round wins! Instructions on how to play are provided <em><a href="">Here.</a></p></em>
     </div>
+</div>
+
+<div id="popup_2" class="popup">
+  <div class="popup-overlay"></div>
+  <div class="popup-content">
+    <a href="#" class="close-popup" data-id="popup_2" data-animation="scale">&times;</a>
+    <h1>Popup 2</h1>
+    <p> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+  </div>
 </div>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>

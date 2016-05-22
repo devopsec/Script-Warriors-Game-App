@@ -1,0 +1,145 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400);
+body {
+  font-family: Lato, Helvetica, Arial, sans-serif;
+  color: #ffffff;
+  background-color: #53777a;
+  margin: 0 auto;
+  max-width: 565px;
+}
+
+form {
+  padding: 0 12px;
+  margin: 36px auto;
+}
+
+input,
+textarea {
+  font-family: Lato, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 0;
+  box-shadow: none;
+  border: 0;
+  color: #719497;
+}
+input:focus,
+textarea:focus {
+  color: #3d5b5e;
+}
+
+textarea,
+input:not([type="reset"]) {
+  -webkit-appearance: none;
+  border-bottom: 4px solid #3d5b5e;
+  outline: none;
+  max-width: 500px;
+}
+textarea:focus,
+input:not([type="reset"]):focus {
+  font-size: 30px;
+  border-bottom: 4px solid #b9c9ca;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 6px 24px;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+input[type="reset"] {
+  width: auto;
+  -webkit-appearance: none;
+  outline: none;
+  display: inline-block;
+  margin: 12px 0;
+  padding: 16px 48px;
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  color: #ffffff;
+  background-color: #3d5b5e;
+  border-bottom: 1px solid #53777a;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 0;
+  cursor: pointer;
+}
+input[type="reset"]:hover {
+  background: #1f3032;
+  margin: 13px 0 11px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 3px 0;
+}
+input[type="reset"]:focus {
+  background: #1f3032;
+  margin: 14px 0 10px;
+  box-shadow: rgba(0, 0, 0, 0.04) 0 2px 0;
+}
+
+textarea {
+  height: 250px;
+}
+textarea:focus {
+  height: 260px;
+}
+
+label {
+  text-transform: uppercase;
+  padding: 12px 0;
+  font-size: 12px;
+  font-weight: normal;
+  max-width: 500px;
+}
+
+.form-item {
+  position: relative;
+  min-height: 76px;
+  margin-bottom: 18px;
+}
+.form-item.form-item-textarea {
+  min-height: 300px;
+}
+.form-item label {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.form-item input, .form-item textarea {
+  position: absolute;
+  top: 30px;
+  left: 0;
+}
+.form-item input:focus, .form-item textarea:focus {
+  max-width: 540px;
+  top: 18px;
+  left: -20px;
+}
+.form-item.focused label {
+  text-align: center;
+  top: -12px;
+  left: -20px;
+  width: 100%;
+  max-width: 540px;
+  padding: 8px 12px;
+  background: #3d5b5e;
+  -webkit-transition: 0.22s;
+  transition: 0.22s;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 6px 24px;
+}
+
+.form-actions {
+  position: relative;
+  min-height: 76px;
+}
+.form-actions input {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.form-actions input:hover {
+  top: 1px;
+  margin: 12px 0;
+}
+.form-actions input:focus {
+  top: 2px;
+  margin: 12px 0;
+}

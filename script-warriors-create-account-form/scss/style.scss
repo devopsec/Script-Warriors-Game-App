@@ -1,0 +1,162 @@
+@import "compass/css3";
+@import url(http://fonts.googleapis.com/css?family=Lato:400);
+
+$fontfam: Lato, Helvetica, Arial, sans-serif;
+
+$color-gray: #b9c9ca;
+$color-green: #53777a;
+$color-green-dark: #3d5b5e;
+$color-green-lite: #719497;
+$color-black-lite: #1f3032;
+$color-white: #ffffff;
+
+@mixin button {
+  width: auto;
+  -webkit-appearance: none;
+  outline: none;
+  display: inline-block;
+  margin: 12px 0;
+  padding: 16px 48px;
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  color: $color-white;
+  background-color: $color-green-dark;
+  border-bottom: 1px solid $color-green;
+  @include transition(0.1s);
+  @include box-shadow(rgba(0,0,0,0.1) 0 4px 0);
+  &:hover {
+    background: $color-black-lite;
+    margin: 13px 0 11px;
+    @include box-shadow(rgba(0,0,0,0.1) 0 3px 0);
+  }
+  &:focus {
+    background: $color-black-lite;
+    margin: 14px 0 10px;
+    @include box-shadow(rgba(0,0,0,0.04) 0 2px 0);
+  }
+}
+
+// Let's Go!
+body {
+  font-family: $fontfam;
+  color: $color-white;
+  background-color: $color-green;
+  margin: 0 auto;
+  max-width: 565px;
+}
+
+// Form
+form {
+  padding: 0 12px;
+  margin: 36px auto;
+}
+
+// Input -- Global
+input,
+textarea {
+  font-family: $fontfam;
+  font-size: 16px;
+  width: 100%;
+  padding: 12px;
+  @include border-radius(0);
+  @include box-shadow(none);
+  border: 0;
+  color: $color-green-lite;
+  &:focus {
+    color: $color-green-dark;
+  }
+}
+textarea,
+input:not([type="reset"]) {
+  -webkit-appearance: none;
+  border-bottom: 4px solid $color-green-dark;
+  outline: none;
+  max-width: 500px;
+  &:focus {
+    font-size: 30px;
+    border-bottom: 4px solid $color-gray;
+    @include box-shadow(rgba(0,0,0,0.2) 0 6px 24px);
+    @include transition(0.1s);
+  }
+}
+
+// Input -- Submit
+input[type="reset"] {
+  @include button;
+  cursor: pointer;
+}
+
+// Textarea
+textarea {
+  height: 250px;
+  &:focus {
+    height: 260px;
+  }
+}
+
+// Labels
+label {
+  text-transform: uppercase;
+  padding: 12px 0;
+  font-size: 12px;
+  font-weight: normal;
+  max-width: 500px;
+}
+
+// Position form items
+.form-item {
+  position: relative;
+  min-height: 76px;
+  margin-bottom: 18px;
+  &.form-item-textarea {
+    min-height: 300px;
+  }
+  label {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  input, textarea {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    &:focus {
+      max-width: 540px;
+      top: 18px;
+      left: -20px;
+    }
+  }
+  &.focused {
+    label {
+      text-align: center;
+      top: -12px;
+      left: -20px;
+      width: 100%;
+      max-width: 540px;
+      padding: 8px 12px;
+      background: $color-green-dark;
+      @include transition(0.22s);
+      @include box-shadow(rgba(0,0,0,0.2) 0 6px 24px);
+    }
+  }
+}
+.form-actions {
+  position: relative;
+  min-height: 76px;
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    &:hover {
+      top: 1px;
+      margin: 12px 0;
+    }
+    &:focus {
+      top: 2px;
+      margin: 12px 0;
+    }
+  }
+}

@@ -1,18 +1,40 @@
-$(document).ready(function() {
-  $("#playbutton").click(function() {
-    var name = prompt("What is your name?");
-    alert("Hello " + name + ".");
-    
-    var ask = confirm("Are you ready to play?"); 
-    
-    if (ask == true) {
-      alert("Great! Let's begin.");
-      location.assign("http://codepen.io/gabobsd/full/PZzMNp/");
-    }
-    
-    else {
-      alert("Oh. Well, hurry up then!")
-    }
 
+// jQuery extend functions for popup
+(function($) {
+  $.fn.openPopup = function( settings ) {
+    var elem = $(this);
+    // Establish our default settings
+    var settings = $.extend({
+      anim: 'fade'
+    }, settings);
+    elem.show();
+    elem.find('.popup-content').addClass(settings.anim+'In');
+  }
+  
+  $.fn.closePopup = function( settings ) {
+    var elem = $(this);
+    // Establish our default settings
+    var settings = $.extend({
+      anim: 'fade'
+    }, settings);
+    elem.find('.popup-content').removeClass(settings.anim+'In').addClass(settings.anim+'Out');
+    
+    setTimeout(function(){
+        elem.hide();
+        elem.find('.popup-content').removeClass(settings.anim+'Out')
+      }, 500);
+  }
+    
+}(jQuery));
+
+// Click functions for popup
+$("#playbutton").click(function(){
+  $('#'+$(this).data('id')).openPopup({
+    anim: (!$(this).attr('data-animation') || $(this).data('animation') == null) ? 'fade' : $(this).data('animation')
+  });
 });
+$("#playbutton").click(function(){
+  $('#'+$(this).data('id')).closePopup({
+    anim: (!$(this).attr('data-animation') || $(this).data('animation') == null) ? 'fade' : $(this).data('animation')
+  });
 });
