@@ -269,6 +269,18 @@ public:
         }
 
     }
+    void Closedoor(char direction)
+    {
+        switch(direction)
+        {
+            case 'n': ndoor = false; (n_room)->sdoor = false; break;
+            case 's': sdoor = false; (s_room)->ndoor = false; break;
+            case 'e': edoor = false; (e_room)->wdoor = false; break;
+            case 'w': wdoor = false; (w_room)->edoor = false; break;
+            default: cout << "invalid direction" << endl; break;
+        }
+        
+    }
     int Get_xcoord()
     {
         return x_pos;

@@ -21,13 +21,19 @@ private:
     int AP;
     vector<Entity> inventory;
     int inv_size;
+    int x_pos;
+    int y_pos;
 public:
-    Player(string n="defaultplayer"):Entity(n)
+    Player(Room & startroom, string n="defaultplayer", int x = 5, int y = 5):Entity(n)
     {
         name = n;
-        type = 's';
+        type = 'f';
         inv_size = 0;
+        activeroom = &startroom;
+        x_pos = x;
+        y_pos = y;
     }
+    Room * activeroom;
     void Add_Inv(Entity & obj)
     {
         inventory.push_back(obj);
@@ -78,7 +84,22 @@ public:
     {
         return inv_size;
     }
-
+    int Get_x()
+    {
+        return x_pos;
+    }
+    int Get_y()
+    {
+        return y_pos;
+    }
+    void Set_x(int x)
+    {
+        x_pos = x;
+    }
+    void Set_y(int y)
+    {
+        y_pos = y;
+    }
     
 };
 

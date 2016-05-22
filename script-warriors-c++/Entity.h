@@ -31,11 +31,23 @@ public:
     {
         if(type == 'o')
             cout << "There is a " << name <<" in the room." << endl;
+        else if (type == 'f')
+        {
+            cout << name << "(friend) is in the room." << endl;
+        }
+        
+        else if (type == 'e')
+            cout << name << "(enemy) is in the room." << endl;
+
     }
     Entity Set_type(char t)
     {
         type = t;
         return *this;
+    }
+    char Get_type()
+    {
+        return type;
     }
 };
 
