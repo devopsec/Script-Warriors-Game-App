@@ -28,7 +28,7 @@
 }(jQuery));
 
 // Click functions for popup
-$("#playbutton").click(function(){
+$("#stats").click(function(){
   $('#'+$(this).data('id')).openPopup({
     anim: (!$(this).attr('data-animation') || $(this).data('animation') == null) ? 'fade' : $(this).data('animation')
   });

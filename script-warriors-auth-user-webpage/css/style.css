@@ -1,5 +1,4 @@
 /*Google Fonts*/
-
 @import url("https://fonts.googleapis.com/css?family=Luckiest+Guy");
 @import url("https://fonts.googleapis.com/css?family=Bitter");
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
@@ -25,16 +24,9 @@ h3 {
 }
 
 /*game creator*/
-
 .author {
   font-family: "Bitter";
   font-size: 26px;
-}
-
-#instructiontitle {
-  font-size: 28px;
-  font-weight: bold;
-  font-family: "Rokkitt";
 }
 
 .splashpagewrapper {
@@ -47,31 +39,15 @@ h3 {
   border: 8px solid;
 }
 
-.instructionbox {
-  margin-bottom: 20px;
-}
-
 /*The logo image*/
-
 #gamelogo {
   display: block;
   margin: auto;
   width: 20%;
 }
 
-
-/*The div around the game instructions*/
-
-.instructionbox {
-  border: 3px solid #000;
-  margin: 10px;
-  padding: 10px;
-}
-
-
 /*The "Play" button to start the game*/
-
-#playbutton {
+.box-btn {
   display: block;
   margin: auto;
   margin-top: 20px;
@@ -89,58 +65,54 @@ h3 {
   border: 3px solid #000000;
 }
 
-
 /* unvisited link */
-
 a:link {
   color: #000099;
 }
 
-
 /* visited link */
-
 a:visited {
   color: #000099;
 }
 
-
 /* mouse-over link */
-
 a:hover {
   cursor: pointer;
   color: #e60000;
 }
 
-
 /* popup styles to choose accnt type */
 .popup {
   display: none;
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	z-index: 10;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
 }
+
 .popup-overlay {
   background-size: stretch;
-	background: rgba(0,0,0,0.9);
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
+
 .popup-content {
-	position: absolute;
+  position: absolute;
   background: #fff;
-	width: 500px;
-	margin: -58px 0 0 -264px;
-	left: 50%;
-	top: 50%;
-	z-index: 11;
+  width: 500px;
+  margin: -58px 0 0 -264px;
+  left: 50%;
+  top: 50%;
+  z-index: 11;
   padding: 14px;
 }
+
 .close-popup {
   display: inline-block;
   position: absolute;
@@ -153,43 +125,57 @@ a:hover {
   animation: scaleIn 0.5s ease-in both;
   -webkit-animation: scaleIn 0.5s ease-in both;
 }
+
 @keyframes scaleIn {
-  from { opacity: 0; -webkit-transform: scale(0.5); transform: scale(0.5); }
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
 }
 @-webkit-keyframes scaleIn {
-  from { opacity: 0; -webkit-transform: scale(0.5); }
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+  }
 }
-
 .scaleOut {
   animation: scaleOut 0.5s ease-out both;
   -webkit-animation: scaleOut 0.5s ease-out both;
 }
+
 @keyframes scaleOut {
-  to { opacity: 0; -webkit-transform: scale(0.5); transform: scale(0.5); }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
 }
 @-webkit-keyframes scaleOut {
-  to { opacity: 0; -webkit-transform: scale(0.5); }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+  }
 }
-
 /* form buttons */
 .button1 {
   text-color: #fff;
-	color: rgba(30, 22, 54, 0.6);
-	box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+  color: rgba(30, 22, 54, 0.6);
+  box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
 }
 
 .button1:hover {
-	color: rgba(255, 255, 255, 0.85);
-	box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
+  color: rgba(255, 255, 255, 0.85);
+  box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
 }
 
 .button2 {
   text-color: #fff;
-	color: rgba(30, 22, 54, 0.6);
-	box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+  color: rgba(30, 22, 54, 0.6);
+  box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
 }
 
 .button2:hover {
-	color: rgba(255, 255, 255, 0.85);
-	box-shadow: rgba(30, 22, 54, 0.7) 0 80px 0px 2px inset;
+  color: rgba(255, 255, 255, 0.85);
+  box-shadow: rgba(30, 22, 54, 0.7) 0 80px 0px 2px inset;
 }

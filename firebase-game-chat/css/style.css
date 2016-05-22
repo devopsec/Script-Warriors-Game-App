@@ -1,0 +1,25 @@
+.container {
+  max-width: 700px;
+}
+
+#comments-container {
+  border: 1px solid #d0d0d0;
+  height: 400px;
+  overflow-y: scroll;
+}
+
+.comment-container {
+  padding: 10px;
+  margin: 6px;
+  background: #f5f5f5;
+  font-size: 13px;
+  border-radius: 5px;
+}
+
+.comment-container .label {
+  margin-right: 20px;
+}
+
+.comment-container:last-of-type {
+  border-bottom: none;
+}

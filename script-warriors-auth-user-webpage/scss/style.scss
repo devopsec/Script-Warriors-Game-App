@@ -31,12 +31,6 @@ h3 {
   font-size: 26px;
 }
 
-#instructiontitle {
-  font-size: 28px;
-  font-weight: bold;
-  font-family: "Rokkitt";
-}
-
 .splashpagewrapper {
   background: #fff;
   padding: 10px;
@@ -45,10 +39,6 @@ h3 {
   margin-top: 30px;
   margin-bottom: 30px;
   border: 8px solid;
-}
-
-.instructionbox {
-  margin-bottom: 20px;
 }
 
 /*The logo image*/
@@ -60,18 +50,9 @@ h3 {
 }
 
 
-/*The div around the game instructions*/
-
-.instructionbox {
-  border: 3px solid #000;
-  margin: 10px;
-  padding: 10px;
-}
-
-
 /*The "Play" button to start the game*/
 
-#playbutton {
+.box-btn {
   display: block;
   margin: auto;
   margin-top: 20px;
@@ -154,7 +135,7 @@ a:hover {
   -webkit-animation: scaleIn 0.5s ease-in both;
 }
 @keyframes scaleIn {
-  from { opacity: 0; -webkit-transform: scale(0.5); transform: scale(0.5); }
+  from { opacity: 0; transform: scale(0.5); }
 }
 @-webkit-keyframes scaleIn {
   from { opacity: 0; -webkit-transform: scale(0.5); }
@@ -165,7 +146,7 @@ a:hover {
   -webkit-animation: scaleOut 0.5s ease-out both;
 }
 @keyframes scaleOut {
-  to { opacity: 0; -webkit-transform: scale(0.5); transform: scale(0.5); }
+  to { opacity: 0; transform: scale(0.5); }
 }
 @-webkit-keyframes scaleOut {
   to { opacity: 0; -webkit-transform: scale(0.5); }
