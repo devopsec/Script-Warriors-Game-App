@@ -9,6 +9,7 @@
 #ifndef rpg_Player_h
 #define rpg_Player_h
 #include "Entity.h"
+#include "Gun.h"
 #include <vector>
 
 using namespace std;
@@ -23,6 +24,7 @@ private:
     int inv_size;
     int x_pos;
     int y_pos;
+    int ammo;
 public:
     Player(Room & startroom, string n="defaultplayer", int x = 5, int y = 5):Entity(n)
     {
@@ -32,6 +34,7 @@ public:
         activeroom = &startroom;
         x_pos = x;
         y_pos = y;
+        HP = 100;
     }
     Room * activeroom;
     void Add_Inv(Entity & obj)
@@ -100,6 +103,8 @@ public:
     {
         y_pos = y;
     }
+    
+
     
 };
 

@@ -67,6 +67,8 @@ void PopulateGrid(Grid &newgrid)
 
 }
 
+
+
 void Turn(Player & player1, Grid & newgrid, int turn = -1)
 {
     
@@ -575,7 +577,7 @@ void Turn(Player & player1, Grid & newgrid, int turn = -1)
                     if(player_type == 's')
                         cout << "You have dropped a " << noun << "." << endl;
                     if(player_type == 'f')
-                        cout << player1.Getname() << " has have dropped a " << noun << "." << endl;
+                        cout << player1.Getname() << " has dropped a " << noun << "." << endl;
                     AP = AP - 1;
                     goto action_start;
                 }
@@ -597,7 +599,38 @@ void Turn(Player & player1, Grid & newgrid, int turn = -1)
         }
         else if(verb == "shoot") //3 AP
         {
-            
+            if(newgrid.Search_Inv(noun, player1.Get_x(), player1.Get_y()) == true)
+            {
+                if(player1.Search_Inv("handgun") == true)
+                {
+                    if(newgrid.Get_Inv(noun, player1.Get_x(), player1.Get_y()).Get_type() == 'o')
+                    {
+                        
+                    }
+                    else if()
+                    {
+                        
+                    }
+                    else if()
+                    {
+                        
+                    }
+                    else if()
+                    {
+                        
+                    }
+
+                }
+                else
+                {
+                    if(player_type == 's')
+                    {
+                        cout << "You do not have a gun!" << endl;
+                    }
+                    goto action_start;
+
+                }
+            }
         }
         else if(verb == "reload") //2 AP
         {
@@ -634,7 +667,7 @@ void Turn(Player & player1, Grid & newgrid, int turn = -1)
             goto describe_start;
             }
         }
-        else if(verb == "show")
+        else if(verb == "show") //+stats
         {
             if(player_type == 's')
             {
@@ -703,6 +736,7 @@ void Initialize(Player & player, Grid & newgrid, int playernum = -1, int mynum =
 
         }
     }
+    player.Add_Inv(*new Gun("handgun"));
     newgrid.Add_Inv(player, 5, 5);
 
 }

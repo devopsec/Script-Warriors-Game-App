@@ -31,6 +31,27 @@ public:
         accuracy_nextroom = a_n;
         accuracy_sameroom = a_s;
     }
-    //bool Shoo
+    bool Shoot_Inroom()
+    {
+        int r = arc4random_uniform(100);
+        if(r < accuracy_sameroom)
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+
+bool Shoot_Nextroom()
+{
+    int r = arc4random_uniform(100);
+    if(r < accuracy_nextroom)
+    {
+        return true;
+    }
+    else
+        return false;
+}
+
 };
 #endif
