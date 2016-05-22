@@ -32,6 +32,11 @@ public:
         if(type == 'o')
             cout << "There is a " << name <<" in the room." << endl;
     }
+    Entity Set_type(char t)
+    {
+        type = t;
+        return *this;
+    }
 };
 
 #endif

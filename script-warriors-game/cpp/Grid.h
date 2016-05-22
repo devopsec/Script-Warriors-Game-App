@@ -52,10 +52,11 @@ public:
                 inventory[x][y][i].Describe();
             }
     }
-    void Add_Inv(Entity obj, int x, int y)
+    void Add_Inv(Entity &obj, int x, int y)
     {
         inventory[x][y].push_back(obj);
         inv_size[x][y]++;
+        
     }
     void Remove(string name, int x, int y)
     {
@@ -78,6 +79,16 @@ public:
             }
         }
         return false;
+    }
+    Entity &Get_Inv(string name, int x, int y)
+    {
+        for(int i = 0; i < inv_size[x][y]; i++)
+        {
+            if(inventory[x][y][i].Getname() == name)
+            {
+                return inventory[x][y][i];
+            }
+        }        
     }
 };
 

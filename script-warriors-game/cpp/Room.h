@@ -28,10 +28,6 @@ private:
     bool e;
     bool s;
     bool w;
-    bool ndoor;
-    bool edoor;
-    bool sdoor;
-    bool wdoor;
     
 public:
     Room(Grid &map, bitmap_image &img, Room * lastroom = NULL, int x = 5, int y = 5, bool doorpos = 0, char origin = 'f')
@@ -85,6 +81,10 @@ public:
 
 
     }
+    bool ndoor;
+    bool edoor;
+    bool sdoor;
+    bool wdoor;
     Room * n_room;
     Room * e_room;
     Room * s_room;
@@ -191,7 +191,7 @@ public:
                 w = true;
                 int door = rand()% 2;
                 wdoor = door;
-                e_room = new Room(map, img, this, x_pos - 1, y_pos, door, 'w');
+                w_room = new Room(map, img, this, x_pos - 1, y_pos, door, 'w');
 
             }
         }
@@ -261,10 +261,10 @@ public:
     {
         switch(direction)
         {
-            case 'n': ndoor = true; break;
-            case 's': sdoor = true; break;
-            case 'e': edoor = true; break;
-            case 'w': wdoor = true; break;
+            case 'n': ndoor = true; (n_room)->sdoor = true; break;
+            case 's': sdoor = true; (s_room)->ndoor = true; break;
+            case 'e': edoor = true; (e_room)->wdoor = true; break;
+            case 'w': wdoor = true; (w_room)->edoor = true; break;
             default: cout << "invalid direction" << endl; break;
         }
 

@@ -73,7 +73,12 @@ void PopulateGrid(Grid &newgrid)
                 int r = arc4random_uniform(5);
                 if(r == 0)
                 {
-                    newgrid.Add_Inv(*new Entity("cat"), i, j);
+                    newgrid.Add_Inv(*new Entity("ammo box"), i, j);
+                    
+                }
+                else if(r == 1)
+                {
+                    newgrid.Add_Inv(*new Entity("health pack"), i, j);
                 }
             }
         }
@@ -96,17 +101,6 @@ int main()
     
     PopulateGrid(newgrid);
     
-    Entity object1("chair");
-    Entity object2("table");
-    Entity object3("desk");
-    Entity object4("cat");
-    newgrid.Add_Inv(object1, 5, 5);
-    newgrid.Add_Inv(object2, 5, 5);
-    newgrid.Add_Inv(object3, 5, 5);
-    newgrid.Add_Inv(object4, 5, 5);
-    newgrid.Remove("desk", 5, 5);
-
-    
     
     Player player1("player1");
     
@@ -125,13 +119,21 @@ int main()
         x_coord = activeroom->Get_xcoord();
         y_coord = activeroom->Get_ycoord();
         newgrid.Add_Inv(player1, x_coord, y_coord);
+        
+    describe_start:
         activeroom->Descrip();
         newgrid.Describe_inv(x_coord, y_coord);
         
         
     action_start:
-        cin >> verb >> noun;
-        
+        //cin >> verb >> noun;
+        string s;
+        getline(cin, s, '\n');
+        verb = s.substr(1, s.find(' ')-1);
+        int pos = s.find(')');
+        noun = s.substr(verb.length() + 2, pos-verb.length()-2);
+
+            
         
         if(verb == "exit")
             fin = 1;
@@ -322,10 +324,57 @@ int main()
 
             }
         }
-        else if(noun == "take")
+        else if(verb == "take" || verb == "get")
         {
-            
-            
+            if(newgrid.Search_Inv(noun, x_coord, y_coord) == true)
+            {
+                player1.Add_Inv(newgrid.Get_Inv(noun, x_coord, y_coord));
+                newgrid.Remove(noun, x_coord, y_coord);
+                cout << "You have added a " << noun << " to your inventory." << endl;
+                goto action_start;
+            }
+            else
+                cout << "There is no " << noun << " in the room." << endl;
+        }
+        else if(verb == "drop")
+        {
+            if(player1.Search_Inv(noun) == true)
+            {
+                player1.Remove(noun);
+                newgrid.Add_Inv(*new Entity(noun), x_coord, y_coord);
+                cout << "You have dropped a " << noun << "." << endl;
+                goto action_start;
+            }
+            else
+                cout << "You care not carrying a " << noun << "." << endl;
+        }
+        else if(verb == "list")
+        {
+            if(noun == "inventory")
+            {
+                player1.List_Inv();
+                goto action_start;
+            }
+            else
+            {
+                cout << "command not understood" << endl;
+            }
+        }
+        else if(verb == "look")
+        {
+            goto describe_start;
+        }
+        else if(verb == "show")
+        {
+            if(noun == "help")
+            {
+                cout << "Help" << endl;
+                goto action_start;
+            }
+            else
+            {
+                cout << "Command not understood" << endl;
+            }
         }
         else
         {
