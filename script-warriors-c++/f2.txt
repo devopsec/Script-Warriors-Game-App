@@ -1,0 +1,6 @@
+take handgun
+close north
+close east
+go north 
+go west
+skip turn

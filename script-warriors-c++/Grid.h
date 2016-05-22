@@ -29,7 +29,7 @@ public:
     {
         return map[x][y];
     }
-
+    
     void Set(int x, int y)
     {
         map[x][y] = true;
@@ -88,7 +88,7 @@ public:
             {
                 return inventory[x][y][i];
             }
-        }        
+        }
     }
 };
 

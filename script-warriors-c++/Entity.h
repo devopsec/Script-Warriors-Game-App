@@ -16,13 +16,16 @@ class Entity
 protected:
     string name;
     char type; //  o = object, s = self, e = enemy, f = friend
-    
 public:
     Entity(string n)
     {
         name = n;
         type = 'o';
+        alive = 1;
     }
+    int HP;
+    bool alive;
+
     string Getname()
     {
         return name;
@@ -48,6 +51,10 @@ public:
     char Get_type()
     {
         return type;
+    }
+    void kill()
+    {
+        alive = 0;
     }
 };
 

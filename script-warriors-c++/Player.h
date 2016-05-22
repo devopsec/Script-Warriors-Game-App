@@ -18,13 +18,11 @@ using namespace std;
 class Player : public Entity
 {
 private:
-    int HP;
     int AP;
     vector<Entity> inventory;
     int inv_size;
     int x_pos;
     int y_pos;
-    int ammo;
 public:
     Player(Room & startroom, string n="defaultplayer", int x = 5, int y = 5):Entity(n)
     {
@@ -35,7 +33,9 @@ public:
         x_pos = x;
         y_pos = y;
         HP = 100;
+        ammo = 5;
     }
+    int ammo;
     Room * activeroom;
     void Add_Inv(Entity & obj)
     {
