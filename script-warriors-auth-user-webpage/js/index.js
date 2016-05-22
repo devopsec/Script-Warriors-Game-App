@@ -28,7 +28,7 @@
 }(jQuery));
 
 // Click functions for popup
-$("#stats").click(function(){
+$("#stats, #chatroom, #download").click(function(){
   $('#'+$(this).data('id')).openPopup({
     anim: (!$(this).attr('data-animation') || $(this).data('animation') == null) ? 'fade' : $(this).data('animation')
   });
